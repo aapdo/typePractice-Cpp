@@ -1,0 +1,5 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja "-DCMAKE_CXX_FLAGS=-fprofile-instr-generate -fcoverage-mapping" "-DCMAKE_C_FLAGS=-fprofile-instr-generate -fcoverage-mapping" -G Ninja -S /Users/imjun-yeong/Library/CloudStorage/OneDrive-dgu.ac.kr/dgu/project/hard_programming/project -B /Users/imjun-yeong/Library/CloudStorage/OneDrive-dgu.ac.kr/dgu/project/hard_programming/project/cmake-build-debug-coverage
+Using compiler AppleClang 13.0.0.13000029
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/imjun-yeong/Library/CloudStorage/OneDrive-dgu.ac.kr/dgu/project/hard_programming/project/cmake-build-debug-coverage
