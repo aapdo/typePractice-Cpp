@@ -99,9 +99,46 @@ void UserService::record(User user, pair<double, double> accuracy){
 }
 
 
-void UserService::showRecord(User user) {
+void UserService::showRecord() {
+    vector<User> userData;
+    string readStr;
+    stringstream *ss;
+    string userId, userPw;
+    int userAccuracyRate, userTypoRate, userPracticeCnt;
+    int dataSize;
+
+    fOpen("../user/user_data.txt", ios_base::in);
+    while (getline(handler, readStr)) {
+        ss = new stringstream(readStr);
+        *ss >> userId;
+        *ss >> userPw;
+        *ss >> userAccuracyRate;
+        *ss >> userTypoRate;
+        *ss >> userPracticeCnt;
+        userData.push_back(User(userId, userPw, userAccuracyRate, userTypoRate, userPracticeCnt));
+    }
+    fClose();
+
+    sort(userData.begin(), userData.end(), compareByAccuracyRate);
+
+    dataSize = userData.size();
+    for (int i = 0; i < dataSize; ++i) {
+        User tmp = userData[i];
+        cout << i + 1 << "등: ";
+        cout << "아이디: " << tmp.getId();
+        cout << " 정확도: " << tmp.getAccuracyRate();
+        cout << " 오타율: " << tmp.getTypoRate();
+        cout << "\n";
+    }
+}
+
+void UserService::showMyRecord(User user) {
     cout << "아이디: " << user.getId();
     cout << " 정확도: " << user.getAccuracyRate();
     cout << " 오타율: " << user.getTypoRate();
     cout << "\n";
+}
+
+bool compareByAccuracyRate(const User& a, const User& b) {
+    return a.getAccuracyRate() > b.getAccuracyRate();
 }

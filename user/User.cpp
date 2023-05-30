@@ -42,6 +42,13 @@ void User::setTypoRate(int typoRate) {
 
 User::User(const string &id, int accuracyRate, int typoRate) : id(id), accuracyRate(accuracyRate), typoRate(typoRate) {}
 
+User::User(const string &id, const string &pw, int accuracyRate, int typoRate, int practiceCnt) : id(id), pw(pw),
+                                                                                                  accuracyRate(
+                                                                                                          accuracyRate),
+                                                                                                  typoRate(typoRate),
+                                                                                                  practiceCnt(
+                                                                                                          practiceCnt) {}
+
 User::~User() {
 
 }

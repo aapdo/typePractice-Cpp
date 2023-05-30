@@ -4,6 +4,7 @@
 
 #include "../../lib/FileControllInterface.h"
 #include "../../user/User.h"
+#include <algorithm>
 
 class UserService : public FileControllInterface{
 public:
@@ -13,9 +14,13 @@ public:
     void signUp();
     void record(User user, pair<double, double>);
 
-    void showRecord(User user);
+    void showRecord();
+
+    void showMyRecord(User user);
+
 };
 
+bool compareByAccuracyRate(const User& a, const User& b);
 
 
 #endif //PROJECT_USERSERVICE_H

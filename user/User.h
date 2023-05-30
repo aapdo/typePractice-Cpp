@@ -14,6 +14,8 @@ private:
 public:
     User(const string &id, int accuracyRate, int typoRate);
     User();
+    User(const string &id, const string &pw, int accuracyRate, int typoRate, int practiceCnt);
+
     ~User();
     const string &getId() const;
     void setId(const string &id);

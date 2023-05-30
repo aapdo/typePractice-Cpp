@@ -56,7 +56,8 @@ int main() {
         cout << "4. 단어 또는 문장 타자 연습\n";
         cout << "5. 긴 글 또는 짧은 글 연습\n";
         cout << "6. 미로 찾기 타자 연습\n";
-        cout << "7. 기록 확인\n";
+        cout << "7. 내 기록 확인\n";
+        cout << "8. 랭킹 확인\n";
         cout << "입력: ";
         cin >> select;
 
@@ -115,8 +116,10 @@ int main() {
                 cin >> select2;
                 game.gameStart(select2);
                 break;
-            case 7://기록 확인
-                userService.showRecord(user);
+            case 7:
+                userService.showMyRecord(user);
+            case 8://기록 확인
+                userService.showRecord();
                 break;
         }
         cout << "\n";
